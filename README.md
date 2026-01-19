@@ -11,6 +11,20 @@ A production-ready cattle re-identification system using advanced computer visio
 - **TOP-1 Matching**: Identify the reference cow (ALPHA) among detected cattle
 - **Flexible Models**: Support for ResNet50, DINOv2, and MegaDescriptor
 
+
+## Problems
+
+- **Occlusion is a nightmare** - partial views generate garbage embeddings, model hallucinates IDs
+- **Multi-view is broken** - same cow from different angles = completely different vectors, useless for matching
+- **Skin patterns cluster together** - Holstein spots aren't unique enough, embeddings collapse into similar space
+- **Perspective shift kills consistency** - top-down vs side view = different vector universe, model has identity crisis
+- **Scale doesn't work** - more cows = exponentially more false positives, combinatorial explosion of mismatches
+- **Crowded scenes are catastrophic** - overlapping bodies create Frankenstein patterns, model sees "new cows" that don't exist
+- **Temporal gaps destroy tracking** - cow leaves frame, comes back, model treats it as stranger
+- **Lighting variation wrecks features** - shadow patterns become false distinguishing features
+- **Pose changes = embedding drift** - lying down vs standing = unrecognizable to the model to re-id them
+
+  
 ## Installation
 
 ### Prerequisites
@@ -271,7 +285,7 @@ If you use this system in your research, please cite:
   title = {Cow Re-Identification System},
   author = {Your Name},
   year = {2026},
-  url = {https://github.com/yourusername/cow-reid}
+  url = {https://github.com/hameddavoodi-cmyk/re-id}
 }
 ```
 
@@ -291,8 +305,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For issues, questions, or contributions:
 - Open an issue on GitHub
 - Submit a pull request
-- Contact: your.email@example.com
-
+- Contact: hamed.davoodi@aisma.it
 ## Changelog
 
 ### v1.0.0 (2026-01-19)
