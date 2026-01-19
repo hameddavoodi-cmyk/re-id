@@ -1,0 +1,16 @@
+# Core dependencies
+streamlit>=1.30.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+Pillow>=10.0.0
+scipy>=1.11.0
+
+# For DINOv2 and MegaDescriptor models
+transformers>=4.30.0
+timm>=0.9.0
+
+# Additional dependencies
+huggingface-hub>=0.20.0
